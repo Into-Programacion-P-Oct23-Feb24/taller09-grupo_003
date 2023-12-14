@@ -16,11 +16,14 @@ public class Ejercicio02 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int[] respuestas = {1, 10, 11, 12, 12, 13, 16, 17, 18, 8, 9, 10, 21, 
+        int[] respuestas = {1, 10, 11, 12, 12, 13, 16, 17, 18, 8, 9, 10, 21,
             -1, 100, 200, 2, 21, 22, 27};
         String[] rangos = {"1-5", "6-10", "11-15", "16-20"};
         int[] valoresRangos = new int[4]; // {0, 0, 0, 0, 0}
         int respuesta;
+        // Añadimos una nueva variable de tipo entero para ir aumentando los 
+        // valores que no corresponden
+        int fuera_de_rango = 0;
 
         for (int i = 0; i < respuestas.length; i++) {
             respuesta = respuestas[i]; // -1
@@ -35,6 +38,10 @@ public class Ejercicio02 {
                     } else {
                         if ((respuesta >= 16) && (respuesta <= 20)) {
                             valoresRangos[3] = valoresRangos[3] + 1;
+                        } else {
+                            // AL else van todos los valores que no ingresaron
+                            // dentro de los rangos y aumentamos la variable
+                            fuera_de_rango++;
                         }
 
                     }
@@ -47,6 +54,9 @@ public class Ejercicio02 {
             System.out.printf("Rango %s - valor %d\n", rangos[i],
                     valoresRangos[i]);
         }
+        // Presentamos en pantalla los valores fuera del rango
+        System.out.printf("Valores fuera de rango: %d\n",
+                fuera_de_rango);
 
     }
 
