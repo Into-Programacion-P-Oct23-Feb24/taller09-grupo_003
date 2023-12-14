@@ -39,7 +39,9 @@ public class Ejercicio03 {
                 contadora++;
                 // Se aumenta el contador de menor
             } else {
-                contadord++;
+                if (arreglo[i] < media) {
+                    contadord++;
+                }
             }
         }
         // Presentamos los valores de los contadores
